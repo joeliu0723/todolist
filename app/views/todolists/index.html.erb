@@ -1,0 +1,56 @@
+<div class ="container">
+  <table class="table">
+    <thead>
+      <tr class="active">
+        <th>勾選</th>
+        <th>標題</th>
+        <th>到期日</th>
+        <th>描述</th>
+        <th>    </th>
+        <th>
+        <th>
+          <button>
+           <%=link_to"新增＋",new_todolist_path %>
+           </button>
+        </th>
+      </tr>
+    </thead>
+  <% @todolists.each do |todolist| %>
+     <tr class="info">
+       <td>
+      <%= check_box_tag :finished, false , todolist.finished,class:"menu-button-checkbox",data: { url: finished_todolist_path(todolist),method: :post, remote: true} %>
+      </td>
+        <td class = "checked">
+        <%= todolist.name%>
+      </td>
+      <td>
+      <%= todolist.due_date%>
+      </td>
+      <td>
+      <%= todolist.description%>
+      </td>
+      <td>
+        <button class="btn btn-default">
+      <%= link_to "詳細",todolist_path(todolist)%>
+      </button>
+      </td>
+      <td>
+        <button class="btn btn-default">
+      <%= link_to "編輯",edit_todolist_path(todolist)%>
+      </button>
+      </td>
+      <td>
+        <% if (todolist.due_date-Date.today).to_i>-1%>
+        <button class="btn btn-default">
+          <%= link_to "刪除",todolist_path(todolist),method: :delete,data:{confirm:"Are you sure?"}%>
+       </button>
+       <%else %>
+       <button class="btn btn-danger">
+         過期
+         </button>
+       <% end%>
+      </td>
+    </tr>
+    <% end %>
+</table>
+</div>

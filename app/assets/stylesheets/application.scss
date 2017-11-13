@@ -1,0 +1,37 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.container {
+  border: 2px solid #DCDCDC;
+  border-radius :10px;
+  margin:40px 50px;
+  padding:0px;
+  background: #ffffff;
+}
+.container3 {
+  border: 0px solid #DCDCDC;
+  border-radius :10px;
+  margin:40px 50px;
+  padding:0px;
+  background: #ffffff;
+}
+.container2 {
+  border: 0px solid #DCDCDC;
+  border-radius :10px;
+  margin:40px 50px;
+  padding:0px;
+  background: #ffffff;
+}
+.menu-button {
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+
+.menu-button-checkbox {
+    width: 20px;
+    height: 20px;
+  }

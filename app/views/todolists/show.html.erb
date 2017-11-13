@@ -1,0 +1,44 @@
+<div class="container3">
+<tbody>
+
+  <h4><div class="label label-default">
+  標題
+  </div></h4>
+
+  <div class="well">
+      <tr>
+  <%= @todolists.name %>
+</tr>
+  </div>
+
+
+
+  <h4><label class="label label-default">
+  到期日
+  </label></h4>
+
+  <div class="well">
+      <tr>
+  <%= @todolists.due_date %>
+</tr>
+  </div>
+
+
+
+  <h4><div class="label label-default">
+  描述
+  </div></h4>
+
+  <div class="well">
+      <tr>
+  <%= @todolists.description %>
+</tr>
+  </div>
+
+
+<button class="btn btn-default">
+<%= link_to 'Back to index', todolists_path %>
+</button>
+
+</tbody>
+</div>
