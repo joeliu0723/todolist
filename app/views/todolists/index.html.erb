@@ -16,13 +16,28 @@
       </tr>
     </thead>
   <% @todolists.each do |todolist| %>
-     <tr class="info">
-       <td>
-      <%= check_box_tag :finished, false , todolist.finished,class:"menu-button-checkbox",data: { url: finished_todolist_path(todolist),method: :post, remote: true} %>
-      </td>
-        <td class = "checked">
-        <%= todolist.name%>
-      </td>
+     <tr>
+        <% if todolist.finished %>
+          <td>
+            <%= link_to finished_todolist_path(todolist), method: :post do %>
+              <span class="glyphicon glyphicon-check"></span>
+              <td class = "checked">
+              <%= todolist.name%>
+            </td>
+
+            <% end %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to finished_todolist_path(todolist), method: :post do %>
+              <span class="glyphicon glyphicon-unchecked"></span>
+            <% end %>
+            <td >
+            <%= todolist.name%>
+          </td>
+          </td>
+        <% end %>
+
       <td>
       <%= todolist.due_date%>
       </td>
