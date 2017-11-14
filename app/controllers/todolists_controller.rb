@@ -32,8 +32,8 @@ class TodolistsController < ApplicationController
   end
 
   def finished
-     @todolists.update(finished: !(@todolists.finished))
-
+     @todolists.update_attributes(finished: !(@todolists.finished))
+    redirect_to todolists_url
  end
 
   #redirect_to todolist_path(@todolists)
